@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <style>
+    .welcome-popup {
+      position: fixed;
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(20, 0, 30, 0.85);
+      padding: 30px 40px;
+      border-radius: 16px;
+      color: #fff;
+      font-size: 20px;
+      font-weight: 600;
+      box-shadow: 0 0 25px #a1068d;
+      z-index: 1000;
+      animation: fadeInScale 1s ease forwards;
+      text-align: center;
+    }
+
+    @keyframes fadeInScale {
+      0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.8);
+      }
+      100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+      }
+    }
+
+    .logout-button {
+      position: fixed;
+      top: 20px;
+      right: 30px;
+      background-color: #a1068d;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 0 12px #a1068d;
+      transition: background 0.3s ease;
+    }
+
+    .logout-button:hover {
+      background-color: #d408b3;
+    }
+  </style>
+</head>
+<body>
+  <video autoplay muted loop id="bgVideo">
+    <source src="/static/Live Wallpaper 4K Abstract Purple Background.mp4" type="video/mp4" />
+  </video>
+  <img src="/static/wallpaper.jpg" class="image-overlay" alt="overlay image">
+  <div class="overlay"></div>
+
+  <!-- Welcome message -->
+  <div class="welcome-popup">
+    Welcome, {{ name }}! 🎉
+  </div>
+
+  <!-- Logout button -->
+  <form action="{{ url_for('logout') }}" method="get">
+    <button class="logout-button">Logout</button>
+  </form>
+</body>
+</html>

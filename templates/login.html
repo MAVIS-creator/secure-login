@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login</title>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <!-- Video Background -->
+  <video autoplay muted loop id="bgVideo">
+    <source src="/static/Live Wallpaper 4K Abstract Purple Background.mp4" type="video/mp4" />
+  </video>
+  <img src="/static/wallpaper.jpg" class="image-overlay" alt="overlay image">
+  <div class="overlay"></div>
+
+  <!-- Flash Messages -->
+<div class="flash-messages">
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      {% for category, message in messages %}
+        <div class="flash {{ category }}">{{ message }}</div>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+</div>
+
+
+
+  <div class="login-card">
+    <h1>Welcome</h1>
+    <div class="logo">Group 3</div>
+
+    <form action="{{ url_for('login') }}" method="post">
+      <div class="form-group">
+        <input type="email" id="email" name="email" required placeholder=" " />
+        <label for="email">Email</label>
+      </div>
+      <div class="form-group password-container">
+        <input type="password" id="password" name="password" required placeholder=" " />
+        <label for="password">Password</label>
+        <i class='bx bx-hide toggle-password' id="togglePassword"></i>
+      </div>
+      <button class="login-btn" type="submit">LOGIN</button>
+    </form>
+
+    <div class="signup-link">
+      <p>Don’t have an account? <a href="{{ url_for('signup') }}">Sign Up</a></p>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

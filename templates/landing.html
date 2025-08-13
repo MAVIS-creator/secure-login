@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SWEP Project 3 | Password Hashing System </title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='project landing page.css') }}">
+</head>
+<body>
+   <video autoplay muted loop id="bgVideo">
+    <source src="/static/Live Wallpaper 4K Abstract Purple Background.mp4" type="video/mp4" />
+  </video>
+  <img src="/static/wallpaper.jpg" class="image-overlay" alt="overlay image">
+  <div class="overlay"></div>
+
+  <nav>
+    <div class="nav-left">SWEP GROUP 3</div>
+    <div class="nav-center">
+    <a href="{{ url_for('home') }}">Home</a>
+    <a href="{{ url_for('team') }}">Team</a>
+    <a href="{{ url_for('frameworks') }}">Frameworks</a>
+    </div>
+    <div class="nav-right">
+      <a href="{{ url_for('login') }}">Login</a>
+      <a href="{{ url_for('signup') }}">Sign Up</a>
+    </div>
+  </nav>
+
+ <section class="hero">
+  <div class="hero-text">
+    <h1 class="h1">Hello,</h1>
+    <h1 class="span">we are <span class="name">SWEP GROUP 3.</span></h1>
+    <h2 class="subtitle">Password Hashing System</h2>
+    <p class="project-description">
+      A safe authentication system constructed using contemporary web technologies. Our platform provides a fully functional sign-up and login mechanism that uses the SHA-256 technique for password hashing to protect user data.
+      <br><br>
+      The technology transforms each password into a distinct fixed-length hash rather than storing them in plain text, rendering them unintelligible even in the event that the database is stolen.
+      <br><br>
+      We integrated our authentication logic, handled forms, and routed traffic using Flask, a lightweight Python web framework, on the backend. Clean HTML and CSS are used to construct the frontend, and SQLite is used to safely store the data.
+      <br><br>
+      The three specialist divisions that make up our team—Requirements, Documentation, and Coding—all contribute to the project's conception, creation, and implementation. We integrated user experience, teamwork, and security into one seamless web application.
+    </p>
+  </div>
+</section>
+
+  </section>
+
+</body>
+</html>

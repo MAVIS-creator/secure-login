@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Team Page</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='team.css') }}">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+
+  <video autoplay muted loop id="bgVideo">
+    <source src="/static/Live Wallpaper 4K Abstract Purple Background.mp4" type="video/mp4" />
+  </video>
+  <img src="/static/wallpaper.jpg" class="image-overlay" alt="overlay image">
+  <div class="overlay"></div>
+
+  <nav>
+    <div class="nav-left">SWEP GROUP 3</div>
+    <div class="nav-center">
+      <a href="{{ url_for('home') }}">Home</a>
+      <a href="{{ url_for('team') }}">Team</a>
+      <a href="{{ url_for('frameworks') }}">Frameworks</a>
+    </div>
+    <div class="nav-right">
+      <a href="{{ url_for('login') }}">Login</a>
+      <a href="{{ url_for('signup') }}">Sign Up</a>
+    </div>
+  </nav>
+
+  <main class="team-container">
+
+    <!-- Requirements Team -->
+    <section class="team-section">
+      <h2>Requirements Team</h2>
+      <div class="team-row">
+        {% for i in range(1, 7) %}
+        <div class="card">
+          <img src="/static/person{{ i }}.jpg" alt="Member {{ i }}">
+          <h3>Member Name {{ i }}</h3>
+          <p>Matric: 12345{{ i }}</p>
+          <div class="social-icons">
+            <a href="#"><i class='bx bxl-facebook'></i></a>
+            <a href="#"><i class='bx bxl-twitter'></i></a>
+            <a href="#"><i class='bx bxl-instagram'></i></a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      <p class="team-description">The Requirements team focused on gathering functional expectations and system needs, identifying features, roles, and user interaction.</p>
+    </section>
+
+    <!-- Documentation Team -->
+    <section class="team-section">
+      <h2>Documentation Team</h2>
+      <div class="team-row">
+        {% for i in range(7, 13) %}
+        <div class="card">
+          <img src="/static/person{{ i }}.jpg" alt="Member {{ i }}">
+          <h3>Member Name {{ i }}</h3>
+          <p>Matric: 12345{{ i }}</p>
+          <div class="social-icons">
+            <a href="#"><i class='bx bxl-facebook'></i></a>
+            <a href="#"><i class='bx bxl-twitter'></i></a>
+            <a href="#"><i class='bx bxl-instagram'></i></a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      <p class="team-description">This team handled all written content and formatting — project proposal, flow diagrams, research references, and system documentation.</p>
+    </section>
+
+    <!-- Coding Team -->
+    <section class="team-section">
+      <h2>Coding Team</h2>
+      <div class="team-row">
+        {% for i in range(13, 20) %}
+        <div class="card">
+          <img src="/static/person{{ i }}.jpg" alt="Member {{ i }}">
+          <h3>Member Name {{ i }}</h3>
+          <p>Matric: 12345{{ i }}</p>
+          <div class="social-icons">
+            <a href="#"><i class='bx bxl-facebook'></i></a>
+            <a href="#"><i class='bx bxl-twitter'></i></a>
+            <a href="#"><i class='bx bxl-instagram'></i></a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      <p class="team-description">The Coding team brought the app to life — implementing authentication, UI logic, hashing techniques, and all backend integration.</p>
+    </section>
+
+  </main>
+</body>
+</html>

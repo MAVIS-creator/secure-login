@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Frameworks & Tools</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='frameworks.css') }}">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+
+  <!-- Background Elements -->
+  <video autoplay muted loop id="bgVideo">
+    <source src="/static/Live Wallpaper 4K Abstract Purple Background.mp4" type="video/mp4" />
+  </video>
+  <img src="/static/wallpaper.jpg" class="image-overlay" alt="overlay image">
+  <div class="overlay"></div>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-left">SWEP GROUP 3</div>
+    <div class="nav-center">
+      <a href="{{ url_for('home') }}">Home</a>
+      <a href="{{ url_for('team') }}">Team</a>
+      <a href="{{ url_for('frameworks') }}">Frameworks</a>
+    </div>
+    <div class="nav-right">
+      <a href="{{ url_for('login') }}">Login</a>
+      <a href="{{ url_for('signup') }}">Sign Up</a>
+    </div>
+  </nav>
+
+  <main class="frameworks-container">
+    <h1>Frameworks & Tools Used</h1>
+
+    <!-- Frontend -->
+    <section class="frameworks-section">
+      <h2>Frontend</h2>
+      <div class="grid">
+        <div class="card">
+          <i class='bx bx-code-alt'></i>
+          <h3>HTML</h3>
+          <p>Page structure and layout.</p>
+        </div>
+        <div class="card">
+          <i class='bx bxs-paint'></i>
+          <h3>CSS</h3>
+          <p>Page styling and responsiveness.</p>
+        </div>
+        <div class="card">
+          <i class='bx bxs-component'></i>
+          <h3>Boxicons</h3>
+          <p>Social media and UI icons.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Backend -->
+    <section class="frameworks-section">
+      <h2>Backend</h2>
+      <div class="grid">
+        <div class="card">
+          <i class='bx bxl-python'></i>
+          <h3>Flask</h3>
+          <p>Web app routing and logic.</p>
+        </div>
+        <div class="card">
+          <i class='bx bx-lock'></i>
+          <h3>Werkzeug</h3>
+          <p>Password hashing and security.</p>
+        </div>
+        <div class="card">
+          <i class='bx bx-file-find'></i>
+          <h3>Jinja2</h3>
+          <p>Template rendering for HTML pages.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Database -->
+    <section class="frameworks-section">
+      <h2>Database</h2>
+      <div class="grid">
+        <div class="card">
+          <i class='bx bx-data'></i>
+          <h3>SQLite</h3>
+          <p>Lightweight local database for storing user data.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tools -->
+    <section class="frameworks-section">
+      <h2>Tools</h2>
+      <div class="grid">
+        <div class="card">
+          <i class='bx bxl-github'></i>
+          <h3>GitHub</h3>
+          <p>Version control and collaboration.</p>
+        </div>
+        <div class="card">
+          <i class='bx bx-terminal'></i>
+          <h3>Terminal</h3>
+          <p>Running servers and environment setup.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+</body>
+</html>

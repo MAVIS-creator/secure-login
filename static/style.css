@@ -1,0 +1,229 @@
+/*login.html css*/
+  * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-position: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .login-card {
+      background: black;
+      padding: 40px 30px;
+      border-radius: 16px;
+      box-shadow: 0 0 70px 0 rgba(131, 90, 134, 0.925);
+      width: 100%;
+      max-width: 360px;
+      text-align: center;
+      opacity: 0.82;
+    }
+    .login-card:hover{
+      opacity: 1;
+    }
+
+    .login-card h1{
+      margin-bottom: 10px;
+      font-size: 24px;
+      color: #ffffff;
+    }
+
+    .logo {
+      width: 70px;
+      height: 30px;
+      background-color: #ffffff;
+      color: rgb(0, 0, 0);
+      border-radius: 8px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 18px;
+      margin: 10px 0 30px;
+    }
+
+    .form-group {
+      position: relative;
+      margin-bottom: 30px;
+      text-align: left;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 12px 10px 12px 10px;
+      font-size: 14px;
+      border: none;
+      border-bottom: 2px solid #ccc;
+      background: none;
+      outline: none;
+    }
+
+    .form-group label {
+      position: absolute;
+      left: 10px;
+      top: 12px;
+      color: #999;
+      font-size: 14px;
+      pointer-events: none;
+      transition: all 0.2s ease;
+    }
+
+    .form-group input:focus + label,
+    .form-group input:not(:placeholder-shown) + label {
+      top: -10px;
+      font-size: 12px;
+      color: #7f00ff;
+    }
+
+    .form-group input:focus {
+      border-bottom-color: #7f00ff;
+    }
+
+    .password-container {
+      position: relative;
+    }
+
+    .toggle-password {
+      position: absolute;
+      right: 10px;
+      top: 12px;
+      font-size: 20px;
+      color: #999;
+      cursor: pointer;
+    }
+
+    .login-btn {
+      background: linear-gradient(to right, #00c6ff, #a1068d);
+      border: none;
+      border-radius: 25px;
+      padding: 12px;
+      color: white;
+      font-size: 14px;
+      font-weight: bold;
+      width: 100%;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .login-btn:hover {
+      opacity: 0.95;
+    }
+
+    .signup-link p{
+      margin-top: 20px;
+      font-size: 13px;
+      color: #888;
+    }
+
+    .signup-link a {
+      color: #7f00ff;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .signup-link a:hover {
+      text-decoration: underline;
+    }
+   input{
+    color: white;
+   }
+
+#bgVideo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -3;
+}
+
+.image-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  opacity: 0.7; 
+  z-index: -2;
+  pointer-events: none;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.3); 
+  z-index: -1;
+}
+
+
+.login-card {
+  position: relative;
+  z-index: 1;
+}
+.flash-messages {
+  position: fixed;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  width: fit-content;
+  max-width: 90%;
+}
+
+.flash {
+  padding: 12px 24px;
+  margin: 10px auto;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 500;
+  text-align: center;
+  color: #fff;
+  background: linear-gradient(to right, #7f00ff, #e100ff); /* Neon purple-pink gradient */
+  box-shadow: 0 0 15px rgba(255, 0, 255, 0.4);
+  animation: fadeInOut 4s ease-in-out forwards;
+  backdrop-filter: blur(8px);
+}
+
+.flash.success {
+  background: linear-gradient(to right, #00c853, #64dd17); /* green gradient */
+  box-shadow: 0 0 15px rgba(0, 255, 120, 0.4);
+}
+
+.flash.danger {
+  background: linear-gradient(to right, #d50000, #ff1744); /* red gradient */
+  box-shadow: 0 0 15px rgba(255, 50, 50, 0.4);
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -20px);
+  }
+  10% {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -20px);
+  }
+}
+.flash.welcome {
+  background: linear-gradient(to right, #4b006e, #1c002d); /* dark violet-black blend */
+  box-shadow: 0 0 20px rgba(144, 0, 255, 0.6);
+  color: white;
+}
