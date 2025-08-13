@@ -1,0 +1,7 @@
+# Force LF line endings for Python code
+*.py text eol=lf
+
+# Optional: Force LF for web files too
+*.html text eol=lf
+*.css text eol=lf
+*.js text eol=lf
